@@ -6,3 +6,14 @@ C:\Users\dit.lab3-PC\documents\visual studio 2010\Projects\Voting_System\Voting_
 C:\Users\dit.lab3-PC\documents\visual studio 2010\Projects\Voting_System\Voting_System\bin\Debug\Voting_System.pdb
 C:\Users\dit.lab3-PC\documents\visual studio 2010\Projects\Voting_System\Voting_System\obj\x86\Debug\Voting_System.exe
 C:\Users\dit.lab3-PC\documents\visual studio 2010\Projects\Voting_System\Voting_System\obj\x86\Debug\Voting_System.pdb
+C:\Users\z3xt5r\RiderProjects\Voting_system\Voting_System\Voting_System\bin\Debug\Voting_System.exe
+C:\Users\z3xt5r\RiderProjects\Voting_system\Voting_System\Voting_System\bin\Debug\Voting_System.pdb
+C:\Users\z3xt5r\RiderProjects\Voting_system\Voting_System\Voting_System\obj\x86\Debug\Voting_System.csprojAssemblyReference.cache
+C:\Users\z3xt5r\RiderProjects\Voting_system\Voting_System\Voting_System\obj\x86\Debug\Voting_System.Form1.resources
+C:\Users\z3xt5r\RiderProjects\Voting_system\Voting_System\Voting_System\obj\x86\Debug\Voting_System.Form2.resources
+C:\Users\z3xt5r\RiderProjects\Voting_system\Voting_System\Voting_System\obj\x86\Debug\Voting_System.Properties.Resources.resources
+C:\Users\z3xt5r\RiderProjects\Voting_system\Voting_System\Voting_System\obj\x86\Debug\Voting_System.csproj.GenerateResource.cache
+C:\Users\z3xt5r\RiderProjects\Voting_system\Voting_System\Voting_System\obj\x86\Debug\Voting_System.csproj.CoreCompileInputs.cache
+C:\Users\z3xt5r\RiderProjects\Voting_system\Voting_System\Voting_System\obj\x86\Debug\Voting_System.exe
+C:\Users\z3xt5r\RiderProjects\Voting_system\Voting_System\Voting_System\obj\x86\Debug\Voting_System.pdb
+C:\Users\z3xt5r\RiderProjects\Voting_system\Voting_System\Voting_System\obj\x86\Debug\Voting_System.Form3.resources
