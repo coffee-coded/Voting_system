@@ -4,14 +4,35 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Text;
 using System.Windows.Forms;
 
 namespace Voting_System
 {
+    
 
     public partial class Form1 : Form
     {
+        string mainhash;
+        int i;
+        static string ComputeSha256Hash(string rawData)
+        {
+            // Create a SHA256   
+            using (SHA256 sha256Hash = SHA256.Create())
+            {
+                // ComputeHash - returns byte array  
+                byte[] bytes = sha256Hash.ComputeHash(Encoding.UTF8.GetBytes(rawData));
+
+                // Convert byte array to a string   
+                StringBuilder builder = new StringBuilder();
+                for (int i = 0; i < bytes.Length; i++)
+                {
+                    builder.Append(bytes[i].ToString("x2"));
+                }
+                return builder.ToString();
+            }
+        }
         static Voter[] voters = new Voter[50];
         static int k = 0;
         static int[] voteings = new int[4];
@@ -19,6 +40,8 @@ namespace Voting_System
         public static void push(Voter v)
         {
             voters[k++] = v;
+           // MessageBox.Show(v.passwordhash);
+            
 
         }
         public static void push_vote(int x)
@@ -66,6 +89,7 @@ namespace Voting_System
                             label1.Text = voters[i].name;
                             label2.Text = voters[i].address;
                             button4.Enabled = true;
+                            mainhash = v.passwordhash;
                             break;
 
                         }
@@ -118,12 +142,58 @@ namespace Voting_System
         private void button4_Click(object sender, EventArgs e)
         {
             //this.Hide();
-            Form3 f3 = new Form3();
-            f3.Show();
+
+            if (k != 0)
+            {
+                try
+                {
+                    for (int i = 0; i < voters.Length; i++)
+                    {
+                        if (voters[i].registrationid == textBox1.Text)
+                        {
+                            string passwordhash = ComputeSha256Hash(textBox2.Text);
+                            if (passwordhash == voters[i].passwordhash)
+                            {
+                                Form3 f3 = new Form3();
+                                f3.Show();
+                            }
+                            else
+                            {
+                                MessageBox.Show("Wrong Password");
+                            }
+                        }
+
+
+                    }
+
+                }
+                catch (Exception E)
+                {
+                    Console.WriteLine();
+                }
+
+
+            } 
+            
+            
         }
         protected override void OnFormClosing(FormClosingEventArgs e)
         {
             Application.Exit();
+        }
+
+        private void textBox2_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+        private void textBox2_Click(object sender, EventArgs e)
+        {
+            textBox2.SelectAll();
+        }
+
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
+
         }
     }
     public class Voter
@@ -132,6 +202,7 @@ namespace Voting_System
         public string address;
         public DateTime dob;
         public string registrationid;
+        public string passwordhash;
     }
 }
     public class Gettersandsetters {
@@ -139,6 +210,7 @@ namespace Voting_System
         public static string address { get; set; }
         public static DateTime dob { get; set; }
         public static string registrationid { get; set; }
+        public static string passwordhash { get; set; }
         
         
         
